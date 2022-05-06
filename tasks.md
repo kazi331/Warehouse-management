@@ -110,3 +110,8 @@ We have a sample task for you.
 7. Do not copy-paste code from anywhere. Write your code and put your best effort into this assignment.
 
 ## Eid Mubarak!!!
+
+ripo link :
+client - https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-KaziSharifulIslam
+
+srver - https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-KaziSharifulIslam
