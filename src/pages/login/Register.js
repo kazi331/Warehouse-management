@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./login.css";
 
 const Register = () => {
   return (
     <div className="wrapper">
       <section className="login-content">
-        <div className="container">
+        <div className="container-2">
           <div className="row align-items-center justify-content-center height-self-center">
             <div className="col-lg-8">
               <div className="card auth-card">

@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./login.css";
 
 const Login = () => {
   return (
     <div className="wrapper">
       <section className="login-content">
-        <div className="container">
+        <div className="container-2">
           <div className="row align-items-center justify-content-center height-self-center">
             <div className="col-lg-8">
               <div className="card auth-card">
@@ -17,10 +18,7 @@ const Login = () => {
                         <p>Login to to your account.</p>
 
                         {/* Validation Errors  */}
-                        <form
-                          method="POST"
-                          action=""
-                        >
+                        <form method="POST" action="">
                           <div className="row">
                             <div className="col-lg-12">
                               <div className="floating-label form-group">
@@ -75,10 +73,7 @@ const Login = () => {
                               </Link>
                             </div>
                           </div>
-                          <button
-                            type="submit"
-                            className="btn btn-primary"
-                          >
+                          <button type="submit" className="btn btn-primary">
                             sign
                           </button>
                           <p className="mt-3">

@@ -1,4 +1,5 @@
 import React from "react";
+import './login.css';
 
 const ResetPass = () => {
   return (
@@ -29,7 +30,6 @@ const ResetPass = () => {
                                   type="email"
                                   placeholder=" "
                                   id="email"
-                                  name="email"
                                   required
                                 />
                                 <label>Email</label>

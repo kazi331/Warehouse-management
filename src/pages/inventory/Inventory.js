@@ -1,5 +1,5 @@
 import React from "react";
-import './backend.css'
+import './inventory.css'
 
 const Inventory = () => {
   return (
@@ -77,17 +77,7 @@ const Inventory = () => {
           >
             Brand Name
           </th>
-          <th
-            className="sorting"
-            tabindex="0"
-            aria-controls="DataTables_Table_0"
-            rowspan="1"
-            colspan="1"
-            aria-label="Cost: activate to sort column ascending"
-            style={{width: "49.7969px"}}
-          >
-            Cost
-          </th>
+         
           <th
             className="sorting"
             tabindex="0"
@@ -120,7 +110,6 @@ const Inventory = () => {
               <img
                 src="https://templates.iqonic.design/posdash/laravel/public/images/table/product/01.jpg"
                 className="img-fluid rounded avatar-50 mr-3"
-                alt="image"
               />
               <div>
                 Organic Cream
@@ -132,7 +121,7 @@ const Inventory = () => {
           <td>Beauty</td>
           <td>$25.00</td>
           <td>Lakme</td>
-          <td>$10.00</td>
+          
           <td>10.0</td>
           <td>
             <div className="d-flex align-items-center list-action">
@@ -173,7 +162,6 @@ const Inventory = () => {
               <img
                 src="https://templates.iqonic.design/posdash/laravel/public/images/table/product/02.jpg"
                 className="img-fluid rounded avatar-50 mr-3"
-                alt="image"
               />
               <div>
                 Rain Umbrella
@@ -185,7 +173,7 @@ const Inventory = () => {
           <td>Grocery</td>
           <td>$30.00</td>
           <td>Sun</td>
-          <td>$20.00</td>
+          
           <td>15.0</td>
           <td>
             <div className="d-flex align-items-center list-action">
