@@ -2,17 +2,17 @@ import React from "react";
 
 const ResetPass = () => {
   return (
-    <div class="wrapper">
-      <section class="login-content">
-        <div class="container">
-          <div class="row align-items-center justify-content-center height-self-center">
-            <div class="col-lg-8">
-              <div class="card auth-card">
-                <div class="card-body p-0">
-                  <div class="d-flex align-items-center auth-content">
-                    <div class="col-lg-7 align-self-center">
-                      <div class="p-3">
-                        <h2 class="mb-2">Reset Password</h2>
+    <div className="wrapper">
+      <section className="login-content">
+        <div className="container">
+          <div className="row align-items-center justify-content-center height-self-center">
+            <div className="col-lg-8">
+              <div className="card auth-card">
+                <div className="card-body p-0">
+                  <div className="d-flex align-items-center auth-content">
+                    <div className="col-lg-7 align-self-center">
+                      <div className="p-3">
+                        <h2 className="mb-2">Reset Password</h2>
                         <p>
                           Enter your email address and we'll send you an email
                           with instructions to reset your password.
@@ -21,11 +21,11 @@ const ResetPass = () => {
                         {/* Validation Errors  */}
 
                         <form method="POST" action="">
-                          <div class="row">
-                            <div class="col-lg-12">
-                              <div class="floating-label form-group">
+                          <div className="row">
+                            <div className="col-lg-12">
+                              <div className="floating-label form-group">
                                 <input
-                                  class="floating-input form-control"
+                                  className="floating-input form-control"
                                   type="email"
                                   placeholder=" "
                                   id="email"
@@ -36,7 +36,7 @@ const ResetPass = () => {
                               </div>
                             </div>
                           </div>
-                          <button type="submit" class="btn btn-primary ">
+                          <button type="submit" className="btn btn-primary ">
                             Email Password Reset Link
                           </button>
                         </form>
