@@ -13,47 +13,47 @@ const Inventory = () => {
           <tr className="ligth ligth-data" role="row">
             <th
               className="sorting_asc"
-              rowspan="1"
-              colspan="1"
+              rowSpan="1"
+              colSpan="1"
               aria-sort="ascending"
               style={{ width: "16.2812px" }}
             ></th>
             <th
               className="sorting"
-              rowspan="1"
-              colspan="1"
+              rowSpan="1"
+              colSpan="1"
               style={{ width: "169.422px" }}
             >
               Product
             </th>
             <th
               className="sorting"
-              rowspan="1"
-              colspan="1"
+              rowSpan="1"
+              colSpan="1"
               style={{ width: "63.8438px" }}
             >
               Code
             </th>
             <th
               className="sorting"
-              rowspan="1"
-              colspan="1"
+              rowSpan="1"
+              colSpan="1"
               style={{ width: "70.4531px" }}
             >
               Category
             </th>
             <th
               className="sorting"
-              rowspan="1"
-              colspan="1"
+              rowSpan="1"
+              colSpan="1"
               style={{ width: "59.0781px" }}
             >
               Price
             </th>
             <th
               className="sorting"
-              rowspan="1"
-              colspan="1"
+              rowSpan="1"
+              colSpan="1"
               style={{ width: "94.4688px" }}
             >
               Brand Name
@@ -61,16 +61,16 @@ const Inventory = () => {
 
             <th
               className="sorting"
-              rowspan="1"
-              colspan="1"
+              rowSpan="1"
+              colSpan="1"
               style={{ width: "68.6562px" }}
             >
               Quantity
             </th>
             <th
               className="sorting"
-              rowspan="1"
-              colspan="1"
+              rowSpan="1"
+              colSpan="1"
               style={{ width: "120px" }}
             >
               Action
