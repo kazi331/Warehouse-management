@@ -6,17 +6,19 @@ import Inventory from "./pages/inventory/Inventory";
 import Login from "./pages/login/Login";
 import Register from "./pages/login/Register";
 import ResetPass from "./pages/login/ResetPass";
+import AddNew from "./pages/products/AddNew";
 
 function App() {
   return (
     <div>
-      <Header/>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/reset-password" element={<ResetPass />} />
+        <Route path="/new" element={<AddNew />} />
       </Routes>
     </div>
   );

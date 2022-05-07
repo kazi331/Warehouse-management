@@ -4,7 +4,7 @@ import "./login.css";
 
 const Login = () => {
   return (
-    <div className="wrapper">
+    <div className="wrapper container-fluid">
       <section className="login-content">
         <div className="container-2">
           <div className="row align-items-center justify-content-center height-self-center">
@@ -74,7 +74,7 @@ const Login = () => {
                             </div>
                           </div>
                           <button type="submit" className="btn btn-primary">
-                            sign
+                            Sign me in
                           </button>
                           <p className="mt-3">
                             Create an Account

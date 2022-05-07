@@ -1,10 +1,12 @@
 import React from "react";
-import Header from "./Header";
+import Products from "../inventory/product/Products";
+import Slider from "./Slider";
 
 const Home = () => {
   return (
     <div>
-      <h2>This is home page</h2>
+      <Slider />
+      <Products/> 
     </div>
   );
 };
