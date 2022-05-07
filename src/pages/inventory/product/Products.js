@@ -5,10 +5,9 @@ import "./products.css";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("products.json")
+    fetch("https://obscure-fortress-33779.herokuapp.com/get-product")
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         setProducts(data);
       });
   }, []);
@@ -19,7 +18,7 @@ const Products = () => {
         <div className="container">
           <div className="row">
             {products.map((product) => (
-              <Product key={product.id} product={product}/>
+              <Product key={product._id} product={product}/>
             ))}
           </div>
         </div>

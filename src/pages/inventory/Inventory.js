@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./inventory-mini.css";
+import SingleInventory from "./SingleInventory";
 const Inventory = () => {
+  const [inventory, setInventory] = useState([]);
+  useEffect(() => {
+    fetch("https://obscure-fortress-33779.herokuapp.com/get-product")
+      .then((res) => res.json())
+      .then((data) => setInventory(data));
+  }, []);
+  console.log(inventory);
   return (
     <div className="container-fluid py-4">
       <table
@@ -11,18 +19,18 @@ const Inventory = () => {
       >
         <thead className="bg-white text-uppercase">
           <tr className="ligth ligth-data" role="row">
-            <th
+            {/* <th
               className="sorting_asc"
               rowSpan="1"
               colSpan="1"
               aria-sort="ascending"
               style={{ width: "16.2812px" }}
-            ></th>
+            ></th> */}
             <th
-              className="sorting"
+              className="sorting text-left"
               rowSpan="1"
               colSpan="1"
-              style={{ width: "169.422px" }}
+              style={{ width: "175.422px" }}
             >
               Product
             </th>
@@ -30,7 +38,7 @@ const Inventory = () => {
               className="sorting"
               rowSpan="1"
               colSpan="1"
-              style={{ width: "63.8438px" }}
+              style={{ width: "50.8438px" }}
             >
               Code
             </th>
@@ -46,7 +54,7 @@ const Inventory = () => {
               className="sorting"
               rowSpan="1"
               colSpan="1"
-              style={{ width: "59.0781px" }}
+              style={{ width: "50.0781px" }}
             >
               Price
             </th>
@@ -54,16 +62,16 @@ const Inventory = () => {
               className="sorting"
               rowSpan="1"
               colSpan="1"
-              style={{ width: "94.4688px" }}
+              style={{ width: "120.4688px" }}
             >
-              Brand Name
+              Supplier
             </th>
 
             <th
               className="sorting"
               rowSpan="1"
               colSpan="1"
-              style={{ width: "68.6562px" }}
+              style={{ width: "60.6562px" }}
             >
               Quantity
             </th>
@@ -78,7 +86,11 @@ const Inventory = () => {
           </tr>
         </thead>
         <tbody className="ligth-body">
-          <tr role="row" className="odd">
+          {inventory.map((single) => (
+            <SingleInventory item={single} key={single._id} />
+          ))}
+
+          {/* <tr role="row" className="odd">
             <td className="sorting_1"></td>
             <td>
               <div className="d-flex align-items-center">
@@ -113,7 +125,7 @@ const Inventory = () => {
                 </button>
               </div>
             </td>
-          </tr>
+          </tr> */}
         </tbody>
       </table>
     </div>
