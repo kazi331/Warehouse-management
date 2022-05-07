@@ -27,12 +27,18 @@ const Product = ({ product }) => {
             <span>$ {price}</span>
           </p>
           <div className="icons">
-            <span className="me-2">
+            {/* <span className="me-2">
               <i className="fa-regular fa-edit"></i>
-            </span>
-            <span>
+            </span> */}
+            <button class="badge px-2 py-1 bg-success mr-2 btn">
+              <i class="ri-pencil-line mr-0"></i>
+            </button>
+            <button class="badge px-2 py-1 bg-warning btn">
+              <i class="ri-delete-bin-line mr-0"></i>
+            </button>
+            {/* <span>
               <i className="fa-regular fa-trash-can"></i>
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
