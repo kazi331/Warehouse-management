@@ -1,30 +1,38 @@
 import React from "react";
+import "./products.css";
 
-const Product = () => {
+const Product = ({ product }) => {
+  console.log(product);
+  const { name, category, description, img, price, quantity, supplier } =
+    product;
   return (
-    <div style={{ minWidth: "300px" }}>
-      <div class="card mb-3" style={{ maxWidth: "400px" }}>
-        <div class="row g-0">
-          <div class="col-md-6">
-            <img
-              src="https://cyberstore.qodeinteractive.com/wp-content/uploads/2017/08/h1-product-5-800x600.jpg"
-              class="img-fluid rounded-start"
-              alt="..."
-            />
-          </div>
-          <div class="col-md-6">
-            <div class="card-body mx-2">
-              <h5 class="card-title">Mac book air lite</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content.
-              </p>
-              <div className="d-flex flex-column">
-                <small class="text-muted">Brand: Apple</small>
-                <small class="text-muted">Supplier: Sayem Khan</small>
-                <small class="text-muted">Price: $500</small>
-              </div>
-            </div>
+    <div className="col-12 col-md-6 col-lg-4 col-xl-3">
+      <div className="products-items">
+        <div className="product-items-head pb-5">
+          <span>{category}</span>
+        </div>
+        <div className="product-items-image pb-5">
+          <img className="product-image" src={img} alt="" />
+        </div>
+        <div className="product-items-details">
+          <h5>
+            <a href="/">{name}</a>
+          </h5>
+          <p>
+            <small>{description}</small>
+          </p>
+        </div>
+        <div className="product-items-footer d-flex justify-content-between">
+          <p>
+            <span>$ {price}</span>
+          </p>
+          <div className="icons">
+            <span className="me-2">
+              <i className="fa-regular fa-edit"></i>
+            </span>
+            <span>
+              <i className="fa-regular fa-trash-can"></i>
+            </span>
           </div>
         </div>
       </div>

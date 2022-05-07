@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Apple 21.5-inch iMac Retina 4K Display",
+    "img": "https://i.ibb.co/MRDhRRf/image-1.jpg",
+    "price": 500,
+    "quantity": 12,
+    "category": "Laptop",
+    "description": "lorem ipsum doller sit ammet ",
+    "supplier": "Sayem Khan"
+  },
+  {
+    "id": 2,
+    "name": "Drone pro",
+    "img": "https://i.ibb.co/0tsRbsG/image-2.jpg",
+    "price": 500,
+    "quantity": 12,
+    "category": "Drone",
+    "description": "lorem ipsum doller sit ammet ",
+    "supplier": "Sayem Khan"
+  },
+  {
+    "id": 3,
+    "name": "CC TV Camera pro",
+    "img": "https://i.ibb.co/d5ZZgXX/image-3.jpg",
+    "price": 500,
+    "quantity": 12,
+    "category": "Camera",
+    "description": "lorem ipsum doller sit ammet ",
+    "supplier": "Sayem Khan"
+  },
+  {
+    "id": 4,
+    "name": "Electronic Steam Iron",
+    "img": "https://i.ibb.co/W5GcGyg/image-6.jpg",
+    "price": 500,
+    "quantity": 12,
+    "category": "Electronics",
+    "description": "lorem ipsum doller sit ammet ",
+    "supplier": "Sayem Khan"
+  },
+  {
+    "id": 5,
+    "name": "Food Blender Black",
+    "img": "https://i.ibb.co/GpNxccV/image-7.jpg",
+    "price": 500,
+    "quantity": 12,
+    "category": "Home Appliance",
+    "description": "lorem ipsum doller sit ammet ",
+    "supplier": "Sayem Khan"
+  },
+  {
+    "id": 7,
+    "name": "Cubot once 4.7 inch",
+    "img": "https://i.ibb.co/ZgN7Sgg/image-8.jpg",
+    "price": 500,
+    "quantity": 12,
+    "category": "Camera",
+    "description": "lorem ipsum doller sit ammet ",
+    "supplier": "Sayem Khan"
+  },
+  {
+    "id": 8,
+    "name": "Stand Kitchen mixer",
+    "img": "https://i.ibb.co/pvqbfXD/image-11.jpg",
+    "price": 500,
+    "quantity": 12,
+    "category": "Kitchen appliance",
+    "description": "lorem ipsum doller sit ammet ",
+    "supplier": "Sayem Khan"
+  },
+  {
+    "id": 9,
+    "name": "Nikon D3200 18-55mm VR Image Stabilization Lens",
+    "img": "https://i.ibb.co/1M2f2TT/image-5.jpg",
+    "price": 500,
+    "quantity": 12,
+    "category": "Camera",
+    "description": "lorem ipsum doller sit ammet ",
+    "supplier": "Sayem Khan"
+  },
+  {
+    "id": 10,
+    "name": "Iphone 13 pro max",
+    "img": "https://i.ibb.co/NpFvtQK/image-9.jpg",
+    "price": 500,
+    "quantity": 12,
+    "category": "Smarphone",
+    "description": "lorem ipsum doller sit ammet ",
+    "supplier": "Sayem Khan"
+  },
+  {
+    "id": 11,
+    "name": "Apple macbook pro",
+    "img": "https://i.ibb.co/6FTBjtJ/image-10.jpg",
+    "price": 500,
+    "quantity": 12,
+    "category": "Computer",
+    "description": "lorem ipsum doller sit ammet ",
+    "supplier": "Sayem Khan"
+  },
+  {
+    "id": 12,
+    "name": "Wireless bluetooth headphone",
+    "img": "https://i.ibb.co/HxFDcs4/headphone.jpg",
+    "price": 500,
+    "quantity": 12,
+    "category": "Headphone",
+    "description": "lorem ipsum doller sit ammet ",
+    "supplier": "Sayem Khan"
+  }
+]
