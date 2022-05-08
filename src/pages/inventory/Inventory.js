@@ -26,7 +26,7 @@ const Inventory = () => {
   const deleteItem = (id) => {
     const proceed = window.confirm("are you sure?");
     if (proceed) {
-      const url = `http://localhost:5000/delete/${id}`;
+      const url = `https://obscure-fortress-33779.herokuapp.com/delete/${id}`;
       fetch(url, { method: "delete" })
         .then((res) => res.json())
         .then((data) => {
