@@ -15,7 +15,7 @@ const Update = () => {
   const sold = 0;
   return (
     <div className="container mx-auto">
-      <h4 className="text-center py-4 "> Your Are Editing: {name}</h4>
+      <h4 className="text-center py-4  "> <small>Your Are Editing - </small> {name}</h4>
       <div className="col-12 col-sm-8 col-lg-8 mx-auto">
         <div className="products-items update">
           <div className="row">

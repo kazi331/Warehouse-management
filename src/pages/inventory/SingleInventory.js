@@ -1,10 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const SingleInventory = ({ item }) => {
+const SingleInventory = ({ item, deleteItem }) => {
   const { name, price, quantity, category, img, supplier, _id, description } =
     item;
-    const navigate = useNavigate();
+    
+  const navigate = useNavigate();
+ 
   return (
     <tr role="row" className="odd">
       {/* <td className="sorting_1"></td> */}
@@ -14,7 +16,7 @@ const SingleInventory = ({ item }) => {
           <div className="product-left">
             {name}
             <p className="mb-0">
-              <small>{description.slice(0, 30)}</small>
+              <small className="d-none d-xl-block">{description.slice(0, 30)}</small>
             </p>
           </div>
         </div>
@@ -30,11 +32,17 @@ const SingleInventory = ({ item }) => {
           <button className="badge px-2 py-1 badge-info mr-2 btn">
             <i className="ri-eye-line mr-0"></i>
           </button>
-          <button onClick={()=> navigate(`/update/${_id}`)} className="badge px-2 py-1  bg-success mr-2 btn">
+          <button
+            onClick={() => navigate(`/update/${_id}`)}
+            className="badge px-2 py-1  bg-success mr-2 btn"
+          >
             <i className="ri-pencil-line mr-0"></i>
           </button>
           <button className="badge px-2 py-1  bg-warning mr-2 btn">
-            <i className="ri-delete-bin-line mr-0"></i>
+            <i
+              onClick={() => deleteItem(_id)}
+              className="ri-delete-bin-line mr-0"
+            ></i>
           </button>
         </div>
       </td>

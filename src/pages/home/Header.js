@@ -14,16 +14,21 @@ const Header = () => {
         <Navbar.Brand href="/">Home</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link as={Link} to="/inventory">
-              Inventory
-            </Nav.Link>
-          </Nav>
+          <Nav className="me-auto"></Nav>
+          {user && (
+            <Nav>
+              <Nav.Link as={Link} to="/inventory">
+                Inventory
+              </Nav.Link>
+              <Nav.Link as={Link} to="/my-items">
+                My Items
+              </Nav.Link>
+              <Nav.Link as={Link} to="/new">
+                Add New
+              </Nav.Link>
+            </Nav>
+          )}
           <Nav>
-            <Nav.Link as={Link} to="/new">
-              Add New
-            </Nav.Link>
-
             <div className="p-0 m-0 d-flex align-items-center ">
               {user ? (
                 <div>
@@ -38,7 +43,11 @@ const Header = () => {
                   </Button>
                 </div>
               ) : (
-                <Nav.Link className="btn bg-info text-light" as={Link} to="/login">
+                <Nav.Link
+                  className="btn bg-info text-light px-2"
+                  as={Link}
+                  to="/login"
+                >
                   Login
                 </Nav.Link>
               )}

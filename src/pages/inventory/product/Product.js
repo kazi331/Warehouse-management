@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./products.css";
 
-const Product = ({ product }) => {
+const Product = ({ product, deleteItem }) => {
   // console.log(product);
   const { name, category, _id, description, img, price, quantity, supplier } =
     product;

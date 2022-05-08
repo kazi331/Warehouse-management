@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import './slider.css'
+import "./slider.css";
 
 const Slider = () => {
   return (
@@ -14,8 +14,12 @@ const Slider = () => {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h3>Featuring categories like “animals,” “architecture,</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3 className="d-none d-md-block">
+                Featuring categories like “animals,” “architecture,
+              </h3>
+              <p className="d-none d-md-block">
+                Nulla vitae elit libero, a pharetra augue mollis interdum.
+              </p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -26,8 +30,12 @@ const Slider = () => {
             />
 
             <Carousel.Caption>
-              <h3>Love nature? Then you'll love placebear</h3>
-              <p>Love nature? Then you'll love placebear.</p>
+              <h3 className="d-none d-md-block">
+                Love nature? Then you'll love placebear
+              </h3>
+              <p className="d-none d-md-block">
+                Love nature? Then you'll love placebear.
+              </p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -38,8 +46,10 @@ const Slider = () => {
             />
 
             <Carousel.Caption>
-              <h3>Featuring options such as “Calm,” and “CRAZY,”</h3>
-              <p>
+              <h3 className="d-none d-md-block">
+                Featuring options such as “Calm,” and “CRAZY,”
+              </h3>
+              <p className="d-none d-md-block">
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
             </Carousel.Caption>

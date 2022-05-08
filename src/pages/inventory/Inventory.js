@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./inventory-mini.css";
 import SingleInventory from "./SingleInventory";
+
 const Inventory = () => {
   const [inventory, setInventory] = useState([]);
   useEffect(() => {
@@ -9,20 +11,37 @@ const Inventory = () => {
       .then((res) => res.json())
       .then((data) => setInventory(data));
   }, []);
-
+  // spinner
   if (inventory.length === 0) {
     return (
       <div
-        style={{ width: "100vw", height: "100vh" }}
+        style={{ width: "90vw", height: "90vh" }}
         className="d-flex align-items-center justify-content-center"
       >
         <Spinner variant="info" animation="grow" />
       </div>
     );
   }
-  // console.log(inventory);
+  // delete item
+  const deleteItem = (id) => {
+    const proceed = window.confirm("are you sure?");
+    if (proceed) {
+      const url = `http://localhost:5000/delete/${id}`;
+      fetch(url, { method: "delete" })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.acknowledged) {
+            const remaining = inventory.filter((single) => single._id !== id);
+            setInventory(remaining);
+          }
+        });
+    }
+  };
+
   return (
     <div className="container-fluid py-4">
+      <Link to="/new" className="btn bg-info text-white my-2 float-right">Add New Item</Link>
       <table
         className="data-table table mb-0 tbl-server-info dataTable"
         id="DataTables_Table_0"
@@ -99,7 +118,11 @@ const Inventory = () => {
         </thead>
         <tbody className="ligth-body">
           {inventory.map((single) => (
-            <SingleInventory item={single} key={single._id} />
+            <SingleInventory
+              item={single}
+              key={single._id}
+              deleteItem={() => deleteItem(single._id)}
+            />
           ))}
         </tbody>
       </table>

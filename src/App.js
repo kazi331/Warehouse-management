@@ -13,6 +13,7 @@ import ResetPass from "./pages/login/ResetPass";
 import AddNew from "./pages/products/AddNew";
 import Update from "./pages/products/Update";
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from "./pages/home/Footer";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/update/:pid" element={<Update />} />
       </Routes>
       <ToastContainer/>
+      <Footer/>
     </div>
   );
 }

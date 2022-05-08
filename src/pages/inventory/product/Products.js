@@ -22,6 +22,8 @@ const Products = () => {
       </div>
     );
   }
+
+
   return (
     <div className="container mb-4 pb-4 mx-auto">
       <h2 className="text-center text-dark py-4 my-4">Products in inventory</h2>
@@ -29,7 +31,7 @@ const Products = () => {
         <div className="container">
           <div className="row">
             {products.map((product) => (
-              <Product key={product._id} product={product}/>
+              <Product key={product._id} product={product} />
             ))}
           </div>
         </div>
