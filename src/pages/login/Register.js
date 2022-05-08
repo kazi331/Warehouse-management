@@ -1,8 +1,34 @@
 import React from "react";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import auth from "../../firebase.init";
 import "./login.css";
+import Social from "./Social";
 
 const Register = () => {
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+
+  const register = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const pass = e.target.password.value;
+    const pass2 = e.target.confirmPass.value;
+    if (pass !== pass2) {
+      toast.warn("Password doesn't match.");
+      return;
+    }
+    createUserWithEmailAndPassword(email, pass);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
+    e.target.email.value = "";
+    e.target.name.value = "";
+    e.target.password.value = "";
+  };
+
   return (
     <div className="wrapper container-fluid">
       <section className="login-content">
@@ -19,7 +45,7 @@ const Register = () => {
 
                         {/* Validation Errors  */}
 
-                        <form method="POST" action="">
+                        <form onSubmit={register}>
                           <div className="row">
                             <div className="col-lg-6">
                               <div className="floating-label form-group">
@@ -75,7 +101,7 @@ const Register = () => {
                                   className="floating-input form-control"
                                   type="password"
                                   placeholder=" "
-                                  name="password_confirmation"
+                                  name="confirmPass"
                                   required=""
                                 />
                                 <label>
@@ -100,6 +126,7 @@ const Register = () => {
                                 </label>
                               </div>
                             </div>
+                            {loading ? <p>Loading......</p> : null}
                           </div>
                           <button type="submit" className="btn btn-primary">
                             {" "}
@@ -109,10 +136,10 @@ const Register = () => {
                             Already have an Account{" "}
                             <Link to="/login">Sign In</Link>
                           </p>
+                          <Social />
                         </form>
                       </div>
                     </div>
-                    <div className="col-lg-0 content-right"></div>
                   </div>
                 </div>
               </div>

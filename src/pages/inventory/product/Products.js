@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
 import Product from "./Product";
 import "./products.css";
 
@@ -11,6 +12,16 @@ const Products = () => {
         setProducts(data);
       });
   }, []);
+  if (products.length === 0) {
+    return (
+      <div
+        style={{ width: "100vw", height: "100vh" }}
+        className="d-flex align-items-center justify-content-center"
+      >
+        <Spinner variant="info" animation="grow" />
+      </div>
+    );
+  }
   return (
     <div className="container mb-4 pb-4 mx-auto">
       <h2 className="text-center text-dark py-4 my-4">Products in inventory</h2>

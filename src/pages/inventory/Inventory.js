@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
 import "./inventory-mini.css";
 import SingleInventory from "./SingleInventory";
 const Inventory = () => {
@@ -8,6 +9,17 @@ const Inventory = () => {
       .then((res) => res.json())
       .then((data) => setInventory(data));
   }, []);
+
+  if (inventory.length === 0) {
+    return (
+      <div
+        style={{ width: "100vw", height: "100vh" }}
+        className="d-flex align-items-center justify-content-center"
+      >
+        <Spinner variant="info" animation="grow" />
+      </div>
+    );
+  }
   // console.log(inventory);
   return (
     <div className="container-fluid py-4">
@@ -89,8 +101,6 @@ const Inventory = () => {
           {inventory.map((single) => (
             <SingleInventory item={single} key={single._id} />
           ))}
-
-          
         </tbody>
       </table>
     </div>

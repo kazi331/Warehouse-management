@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import "./App.css";
 import Header from "./pages/home/Header";
 import Home from "./pages/home/Home";
@@ -10,6 +12,7 @@ import Register from "./pages/login/Register";
 import ResetPass from "./pages/login/ResetPass";
 import AddNew from "./pages/products/AddNew";
 import Update from "./pages/products/Update";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -25,6 +28,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/update/:pid" element={<Update />} />
       </Routes>
+      <ToastContainer/>
     </div>
   );
 }

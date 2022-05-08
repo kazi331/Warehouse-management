@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import { toast , ToastContainer} from "react-toastify";
+import auth from "../../firebase.init";
 import "./login.css";
+import Social from "./Social";
 
 const Login = () => {
+
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+   
+  const emailLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const pass = e.target.password.value;
+    signInWithEmailAndPassword(email, pass);
+     
+  };
+  if(error) {
+    toast.error(error.message)
+  }
   return (
     <div className="wrapper container-fluid">
       <section className="login-content">
@@ -12,13 +30,13 @@ const Login = () => {
               <div className="card auth-card">
                 <div className="card-body p-0">
                   <div className="d-flex align-items-center auth-content">
-                    <div className="col-lg-12 align-self-center">
+                    <div className="col-lg-12  ">
                       <div className="p-3">
                         <h2 className="mb-2">Sign In</h2>
                         <p>Login to to your account.</p>
 
                         {/* Validation Errors  */}
-                        <form method="POST" action="">
+                        <form onSubmit={emailLogin}>
                           <div className="row">
                             <div className="col-lg-12">
                               <div className="floating-label form-group">
@@ -28,7 +46,7 @@ const Login = () => {
                                   type="email"
                                   name="email"
                                   placeholder=""
-                                  required=""
+                                  required
                                 />
                                 <label>
                                   Email<span className="text-danger">*</span>
@@ -45,7 +63,8 @@ const Login = () => {
                                   required
                                 />
                                 <label>
-                                  Password<span className="text-danger">*</span>
+                                  Password
+                                  <span className="text-danger">*</span>
                                 </label>
                               </div>
                             </div>
@@ -63,6 +82,9 @@ const Login = () => {
                                   Remember Me
                                 </label>
                               </div>
+                              {
+                              loading ? <p>Loading......</p> : null
+                            }
                             </div>
                             <div className="col-lg-6">
                               <Link
@@ -76,22 +98,16 @@ const Login = () => {
                           <button type="submit" className="btn btn-primary">
                             Sign me in
                           </button>
-                          <p className="mt-3">
-                            Create an Account
-                            <Link to="/register" className="text-primary">
-                              {" "}
-                              Sign Up
-                            </Link>
-                          </p>
                         </form>
+                        <p className="mt-3">
+                          Create an Account
+                          <Link to="/register" className="text-primary">
+                            {" "}
+                            Sign Up
+                          </Link>
+                        </p>
                       </div>
-                    </div>
-                    <div className="col-lg-0 content-right">
-                      {/* <img
-                        src="https://templates.iqonic.design/posdash/laravel/public/images/login/01.png"
-                        className="img-fluid image-right"
-                        alt=""
-                      /> */}
+                      <Social />
                     </div>
                   </div>
                 </div>
@@ -100,6 +116,7 @@ const Login = () => {
           </div>
         </div>
       </section>
+      <ToastContainer/>
     </div>
   );
 };

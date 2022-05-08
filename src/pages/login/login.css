@@ -36,7 +36,7 @@
   --cyan: #7ee2ff;
   --white: #fff;
   --gray: #6c757d;
-  --gray-dark: #01041b;
+  --gray-dark: #343a40;
   --skyblue: #158df7;
   --primary: #32bdea;
   --secondary: #ff7e41;
@@ -45,7 +45,7 @@
   --warning: #ff9770;
   --danger: #e08db4;
   --light: #c7cbd3;
-  --dark: #01041b;
+  --dark: #343a40;
   --orange: #ff7e41;
   --purple: #4731b6;
   --skyblue: #158df7;
@@ -1646,14 +1646,14 @@ a.text-danger:hover {
   border: 1px solid #dcdfe8;
   border-radius: 10px;
   overflow: hidden;
-  color: #110a57;
+  color: #343a40;
 }
 .table p,
 .table span {
   color: #676e8a;
 }
 .table label {
-  color: #110a57;
+  color: #343a40;
 }
 @-webkit-keyframes fade {
   0% {
@@ -3720,19 +3720,19 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   border-radius: 20px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #01041b;
+  background: #343a40;
   border-radius: 20px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #01041b;
+  background: #343a40;
   border-radius: 10px;
 }
 ::-moz-scrollbar-thumb {
-  background: #01041b;
+  background: #343a40;
   border-radius: 20px;
 }
 ::-moz-scrollbar-thumb:hover {
-  background: #01041b;
+  background: #343a40;
   border-radius: 20px;
 }
 ::-webkit-scrollbar {
@@ -3767,7 +3767,7 @@ h1 {
   font-weight: 600;
   margin: 0;
   line-height: 1;
-  color: #110a57;
+  color: #343a40;
   font-size: 2.488em;
 }
 h1 a {
@@ -3778,7 +3778,7 @@ h2 {
   font-weight: 600;
   margin: 0;
   line-height: 1.5;
-  color: #110a57;
+  color: #343a40;
   font-size: 2.074em;
 }
 h2 a {
@@ -3789,16 +3789,15 @@ h3 {
   font-weight: 600;
   margin: 0;
   line-height: 1.5;
-  color: #110a57;
+  color: #343a40;
   font-size: 1.728em a;
-  font-size-color: inherit;
 }
 h4 {
   font-family: Lato, sans-serif;
   font-weight: 600;
   margin: 0;
   line-height: 1;
-  /* color: #110a57; */
+  /* color: #343a40; */
   font-size: 1.44em;
 }
 h4 a {
@@ -3809,7 +3808,7 @@ h5 {
   font-weight: 600;
   margin: 0;
   line-height: 1.5;
-  color: #110a57;
+  color: #343a40;
   font-size: 1.2em;
 }
 h5 a {
@@ -3820,7 +3819,7 @@ h6 {
   font-weight: 600;
   margin: 0;
   line-height: 1.5;
-  color: #110a57;
+  color: #343a40;
   font-size: 1em;
 }
 h6 a {
@@ -3859,7 +3858,7 @@ button:focus {
   }
 }
 label {
-  color: #01041b;
+  color: #343a40;
 }
 .form-control {
   height: 45px;
@@ -3872,7 +3871,7 @@ label {
   box-shadow: none;
 }
 .form-control:focus {
-  color: #01041b;
+  color: #343a40;
   border-color: #32bdea;
   box-shadow: none;
 }
@@ -3979,7 +3978,7 @@ label {
 .floating-input:not(:placeholder-shown) ~ label {
   top: 0;
   font-size: 14px;
-  background: #fff;
+  background: linear-gradient(to bottom, #fff, #fff, transparent);
   padding: 5px 8px;
 }
 @media (max-width: 575px) {
