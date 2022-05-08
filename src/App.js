@@ -9,6 +9,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/login/Register";
 import ResetPass from "./pages/login/ResetPass";
 import AddNew from "./pages/products/AddNew";
+import Update from "./pages/products/Update";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/reset-password" element={<ResetPass />} />
         <Route path="/new" element={<AddNew />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/update/:pid" element={<Update />} />
       </Routes>
     </div>
   );

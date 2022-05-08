@@ -8,7 +8,7 @@ const Inventory = () => {
       .then((res) => res.json())
       .then((data) => setInventory(data));
   }, []);
-  console.log(inventory);
+  // console.log(inventory);
   return (
     <div className="container-fluid py-4">
       <table
@@ -90,42 +90,7 @@ const Inventory = () => {
             <SingleInventory item={single} key={single._id} />
           ))}
 
-          {/* <tr role="row" className="odd">
-            <td className="sorting_1"></td>
-            <td>
-              <div className="d-flex align-items-center">
-                <img
-                  src="https://templates.iqonic.design/posdash/laravel/public/images/table/product/01.jpg"
-                  className="img-fluid rounded avatar-50 mr-3" alt=""
-                />
-                <div>
-                  Organic Cream
-                  <p className="mb-0">
-                    <small>This is test Product</small>
-                  </p>
-                </div>
-              </div>
-            </td>
-            <td>CREM01</td>
-            <td>Beauty</td>
-            <td>$25.00</td>
-            <td>Lakme</td>
-
-            <td>10.0</td>
-            <td>
-              <div className="d-flex align-items-center list-action">
-                <button className="badge badge-info mr-2 btn">
-                  <i className="ri-eye-line mr-0"></i>
-                </button>
-                <button className="badge bg-success mr-2 btn">
-                  <i className="ri-pencil-line mr-0"></i>
-                </button>
-                <button className="badge bg-warning mr-2 btn">
-                  <i className="ri-delete-bin-line mr-0"></i>
-                </button>
-              </div>
-            </td>
-          </tr> */}
+          
         </tbody>
       </table>
     </div>

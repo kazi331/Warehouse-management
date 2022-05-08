@@ -3713,7 +3713,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ::-moz-scrollbar {
   width: 8px;
   height: 8px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-track {
   background: #dcdfe8;
@@ -3725,7 +3725,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #01041b;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 ::-moz-scrollbar-thumb {
   background: #01041b;
@@ -3736,13 +3736,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   border-radius: 20px;
 }
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 8px;
+  width: 8px;
+  height: 18px;
   border-radius: 10px;
 }
 ::-moz-scrollbar {
-  width: 4px;
-  height: 8px;
+  width: 8px;
+  height: 1 8px;
   border-radius: 10px;
 }
 body {
@@ -3798,7 +3798,7 @@ h4 {
   font-weight: 600;
   margin: 0;
   line-height: 1;
-  color: #110a57;
+  /* color: #110a57; */
   font-size: 1.44em;
 }
 h4 a {

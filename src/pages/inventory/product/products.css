@@ -21,11 +21,24 @@
     transition: 0.4s;
     cursor: pointer;
     margin-bottom: 30px;
+
   }
+  /* for update page  */
+  .update {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+
   .products-items:hover {
     box-shadow: -2px -2px 19px -6px #c6c6c6;
   }
-  
+  .product-items-head{
+    display: flex;
+    justify-content: space-between;
+  }
   
   .products-items .product-items-head span {
     color: #a7a7a7;
