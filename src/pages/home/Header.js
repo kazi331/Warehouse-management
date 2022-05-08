@@ -14,7 +14,9 @@ const Header = () => {
         <Navbar.Brand href="/">Home</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto"></Nav>
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
+          </Nav>
           {user && (
             <Nav>
               <Nav.Link as={Link} to="/inventory">

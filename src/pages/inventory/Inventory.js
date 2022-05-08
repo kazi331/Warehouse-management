@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Spinner } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./inventory-mini.css";
 import SingleInventory from "./SingleInventory";
@@ -41,7 +41,9 @@ const Inventory = () => {
 
   return (
     <div className="container-fluid py-4">
-      <Link to="/new" className="btn bg-info text-white my-2 float-right">Add New Item</Link>
+      <Link to="/new" className="btn bg-info text-white my-2 float-right">
+        Add New Item
+      </Link>
       <table
         className="data-table table mb-0 tbl-server-info dataTable"
         id="DataTables_Table_0"

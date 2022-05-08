@@ -14,6 +14,7 @@ import AddNew from "./pages/products/AddNew";
 import Update from "./pages/products/Update";
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from "./pages/home/Footer";
+import Blog from "./pages/blog/Blog";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/new" element={<AddNew />} />
         <Route path="/products" element={<Products />} />
         <Route path="/update/:pid" element={<Update />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
       <ToastContainer/>
       <Footer/>
