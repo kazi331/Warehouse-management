@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Product from "./Product";
 import "./products.css";
 
@@ -23,7 +24,7 @@ const Products = () => {
     );
   }
 
-
+  products.length = 6;
   return (
     <div className="container mb-4 pb-4 mx-auto">
       <h2 className="text-center text-dark py-4 my-4">Products in inventory</h2>
@@ -36,6 +37,9 @@ const Products = () => {
           </div>
         </div>
       </section>
+      <div className="text-center">
+        <Link to="/inventory" className="btn btn-primary">Manage Inventories</Link>
+      </div>
     </div>
   );
 };

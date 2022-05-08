@@ -1,7 +1,6 @@
 import React from "react";
-import Slider from "./Slider";
 import Products from "../inventory/product/Products";
-import Footer from "./Footer";
+import Slider from "./Slider";
 
 const Home = () => {
   return (
