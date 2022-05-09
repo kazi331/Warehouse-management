@@ -3,7 +3,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
-import "./login.css";
+// import "./login.css";
 import Social from "./Social";
 
 const Register = () => {
@@ -30,7 +30,7 @@ const Register = () => {
   };
 
   return (
-    <div className="wrapper container-fluid">
+    <div className="wrapper container-fluid my-4">
       <section className="login-content">
         <div className="container-2">
           <div className="row align-items-center justify-content-center height-self-center">
@@ -112,18 +112,8 @@ const Register = () => {
                             </div>
                             <div className="col-lg-12">
                               <div className="custom-control custom-checkbox mb-3">
-                                <input
-                                  type="checkbox"
-                                  className="custom-control-input"
-                                  id="customCheck1"
-                                />
-                                <label
-                                  className="custom-control-label"
-                                  htmlFor="customCheck1"
-                                >
-                                  I agree with the terms of use
-                                  <span className="text-danger">*</span>
-                                </label>
+                                
+                               
                               </div>
                             </div>
                             {loading ? <p>Loading......</p> : null}

@@ -26,11 +26,11 @@ const Products = () => {
 
   products.length = 6;
   return (
-    <div className="container mb-4 pb-4 mx-auto">
+    <div className="container mb-4 pb-4 mx-auto ">
       <h2 className="text-center text-dark py-4 my-4">Products in inventory</h2>
       <section className="my-products">
         <div className="container">
-          <div className="row">
+          <div className=" my-products">
             {products.map((product) => (
               <Product key={product._id} product={product} />
             ))}

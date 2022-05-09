@@ -1,9 +1,11 @@
-
-footer section a{
-    cursor: pointer;
-    border:none !important;
-    border-radius: 50% !important;
-    height: 42px;
-    width: 42px;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 10%);
+footer section a {
+  cursor: pointer;
+  border: none !important;
+  border-radius: 50% !important;
+  height: 42px;
+  width: 42px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 10%);
+}
+.footer-shadow {
+  background-color: rgb(217, 233, 255) !important;
 }

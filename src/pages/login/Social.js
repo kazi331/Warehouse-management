@@ -50,11 +50,11 @@ const Social = () => {
       <h3 className="text-dark text-center">Social Login</h3>
       <p className="text-center">Login with social media</p>
       <div className="d-flex gap-2 flex-column py-2 mb-4">
-        <Button onClick={googleLogin}>Login With Google</Button>
-        <Button disabled onClick={fbLogin}>
+        <Button className="bg-primary text-white shadow-none" onClick={googleLogin}>Login With Google</Button>
+        <Button className="bg-primary text-white shadow-none" disabled onClick={fbLogin}>
           Login With Facebook
         </Button>
-        <Button onClick={ghLogin}>Login With Github</Button>
+        <Button className="bg-primary text-white shadow-none" onClick={ghLogin}>Login With Github</Button>
       </div>
     </div>
   );

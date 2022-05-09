@@ -8,8 +8,8 @@ const Product = ({ product, deleteItem }) => {
     product;
 
   return (
-    <div className="col-12 col-md-6 col-lg-4 col-xl-3">
-      <div className="products-items">
+    <div className=" my-product">
+      <div className="products-items bg-white">
         <div className="product-items-head pb-3">
           <span>{category}</span>
         </div>
@@ -27,11 +27,12 @@ const Product = ({ product, deleteItem }) => {
           <br />
           <small>Avl: {quantity}</small>
         </div>
-        <div className="product-items-footer d-flex justify-content-between">
-          <p>
-            <small className="text-success mb-0 pb-0">${price}</small> <br />
-          </p>
-          <div className="icons">
+        <div className="icons">
+          <div>
+            <small className="text-success mb-0 pb-0">${price}</small>
+          </div>
+          <div>
+            {" "}
             <Link
               to={`/update/${_id}`}
               className="badge px-2 py-1 bg-success mr-2 btn"

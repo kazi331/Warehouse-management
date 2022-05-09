@@ -1,0 +1,125 @@
+.p-items-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+  padding: 0;
+  justify-content: flex-start;
+}
+.p-item {
+  flex: 0 0 20%;
+  max-width: 20%;
+  padding: 0 5px 10px;
+  margin-bottom: 0;
+  display: flex;
+  position: relative;
+}
+@media (max-width: 1279px) {
+  .p-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+@media (max-width: 767px) {
+  .p-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+.p-item-inner {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.p-item-inner .marks {
+  display: flex;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  z-index: 10;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.p-item-inner .mark {
+  background: #6e2594;
+  width: auto;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 10px;
+  line-height: 14px;
+  margin-bottom: 2px;
+  border-radius: 0 20px 20px 0;
+  flex: 0 0 auto;
+}
+
+.p-item-img {
+  text-align: center;
+  border-bottom: 3px solid rgba(55, 73, 187, 0.03);
+  flex: 0 0 220px;
+  padding: 20px;
+  margin: 0;
+}
+.p-item-img > a {
+  height: 228px;
+}
+a {
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  color: #ef4a23;
+}
+.p-item-img img {
+  max-width: 100%;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+  max-width: 100%;
+  height: auto;
+}
+
+.p-item-details {
+  padding: 15px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.common-home .p-item-name {
+  font-weight: 400;
+  font-size: 15px;
+}
+@media (max-width: 1279px) {
+  .p-item-name {
+    font-size: 14px;
+  }
+}
+.p-item-name {
+  margin: 0 0 15px;
+  line-height: 20px;
+  overflow: hidden;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  height: auto;
+}
+.p-item-name a {
+    color: #111;
+}
+.p-item-price {
+    line-height: 22px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #EF4A23;
+}
+.p-item-price .price-old {
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: line-through;
+    color: #666666;
+    padding-left: 5px;
+}

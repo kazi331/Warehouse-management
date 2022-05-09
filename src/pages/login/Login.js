@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
 import "./login.css";
+// import "./loginMini.css";
 import Social from "./Social";
 
 const Login = () => {
@@ -31,7 +32,7 @@ const Login = () => {
     navigate(from, { replace: true });
   }
   return (
-    <div className="wrapper container-fluid">
+    <div className="wrapper container-fluid my-4">
       <section className="login-content">
         <div className="container-2">
           <div className="row align-items-center justify-content-center height-self-center">
@@ -78,19 +79,7 @@ const Login = () => {
                               </div>
                             </div>
                             <div className="col-lg-6">
-                              <div className="custom-control custom-checkbox mb-3">
-                                <input
-                                  type="checkbox"
-                                  className="custom-control-input"
-                                  id="customCheck1"
-                                />
-                                <label
-                                  className="custom-control-label control-label-1"
-                                  htmlFor="customCheck1"
-                                >
-                                  Remember Me
-                                </label>
-                              </div>
+                              <div className="custom-control custom-checkbox mb-3"></div>
                               {loading ? <p>Loading......</p> : null}
                             </div>
                             <div className="col-lg-6">

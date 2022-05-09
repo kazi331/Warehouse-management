@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Blog from "./pages/blog/Blog";
+import Featured from "./pages/featured/Featured";
 import Footer from "./pages/home/Footer";
 import Header from "./pages/home/Header";
 import Home from "./pages/home/Home";
@@ -13,6 +14,7 @@ import Login from "./pages/login/Login";
 import Protected from "./pages/login/Protected";
 import Register from "./pages/login/Register";
 import ResetPass from "./pages/login/ResetPass";
+import MyItems from "./pages/myItem/MyItems";
 import NotFound from "./pages/notFound/NotFound";
 import AddNew from "./pages/products/AddNew";
 import Update from "./pages/products/Update";
@@ -52,6 +54,9 @@ function App() {
           }
         />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/featured" element={<Featured />} />
+        <Route path="/my-items" element={<MyItems />} />
+        
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer />
