@@ -3,7 +3,7 @@ import { Alert } from "react-bootstrap";
 
 const Blog = () => {
   return (
-    <div className="container py-4 mx-auto">
+    <div className="container py-4 mx-auto card my-4">
       <Alert variant="warning">Difference between javascript and nodejs</Alert>
       <p className="p-3">
         <big>Ans: </big> Lorem ipsum dolor, sit amet consectetur adipisicing

@@ -1,25 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
-import { toast , ToastContainer} from "react-toastify";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
 import "./login.css";
 import Social from "./Social";
 
 const Login = () => {
-
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-   
+
   const emailLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const pass = e.target.password.value;
     signInWithEmailAndPassword(email, pass);
-     
   };
-  if(error) {
-    toast.error(error.message)
+  if (error) {
+    toast.error(error.message);
+  }
+
+  // redirect user after logging in
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  if (loading) {
+    return <p>Loading......</p>;
+  }
+  if (user) {
+    navigate(from, { replace: true });
   }
   return (
     <div className="wrapper container-fluid">
@@ -82,9 +91,7 @@ const Login = () => {
                                   Remember Me
                                 </label>
                               </div>
-                              {
-                              loading ? <p>Loading......</p> : null
-                            }
+                              {loading ? <p>Loading......</p> : null}
                             </div>
                             <div className="col-lg-6">
                               <Link
@@ -116,7 +123,7 @@ const Login = () => {
           </div>
         </div>
       </section>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };

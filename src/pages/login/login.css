@@ -3705,46 +3705,27 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     transform: rotate(360deg);
   }
 }
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  border-radius: 20px;
-}
-::-moz-scrollbar {
-  width: 8px;
-  height: 8px;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #dcdfe8;
-  border-radius: 20px;
-}
+
 ::-webkit-scrollbar-thumb {
   background: #343a40;
-  border-radius: 20px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #343a40;
   border-radius: 10px;
 }
-::-moz-scrollbar-thumb {
-  background: #343a40;
-  border-radius: 20px;
-}
-::-moz-scrollbar-thumb:hover {
-  background: #343a40;
-  border-radius: 20px;
-}
+
+
+/* for pc, chrome  */
 ::-webkit-scrollbar {
   width: 8px;
-  height: 18px;
-  border-radius: 10px;
+  height: 8px;
+  border-radius: 5px;
 }
-::-moz-scrollbar {
-  width: 8px;
-  height: 1 8px;
-  border-radius: 10px;
-}
+/* for mobile  */
+@media (max-width: 576px) { 
+  ::-webkit-scrollbar {
+    height: 4px;
+    border-radius: 10px;
+  }
+ }
+
 body {
   font-family: Lato, sans-serif;
   font-weight: 400;
@@ -5082,4 +5063,7 @@ i {
 }
 label {
   line-height: 1px;
+}
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.0rem;
 }

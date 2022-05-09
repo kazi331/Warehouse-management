@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "react-bootstrap";
 import {
   useAuthState,
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const Social = () => {
+  // redirect user after logging in
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const [user] = useAuthState(auth);
-  const [customError, setCustomError] = useState([]);
   const [signInWithGoogle, loading, error] = useSignInWithGoogle(auth);
   const [signInWithGithub] = useSignInWithGithub(auth);
 
@@ -32,6 +37,13 @@ const Social = () => {
       return;
     }
   };
+
+  if (loading) {
+    return <p>Loading......</p>;
+  }
+  if (user) {
+    navigate(from, { replace: true });
+  }
 
   return (
     <div className="container col-lg-6 mx-auto">

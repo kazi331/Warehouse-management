@@ -123,22 +123,8 @@ html {
   box-sizing: border-box;
 }
 
-:-webkit-scrollbar {
-  border-radius: 10px;
-  width: 8px;
-  height: 8px;
-}
 
-:-webkit-scrollbar-thumb,
-:-webkit-scrollbar-thumb:hover {
-  background: #01041b;
-  border-radius: 20px;
-}
 
-:-webkit-scrollbar-track {
-  background: #dcdfe8;
-  border-radius: 20px;
-}
 
 table {
   caption-side: bottom;

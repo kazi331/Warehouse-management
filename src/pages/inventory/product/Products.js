@@ -16,7 +16,7 @@ const Products = () => {
   if (products.length === 0) {
     return (
       <div
-        style={{ width: "100vw", height: "100vh" }}
+        style={{ width: "90vw", height: "90vh" }}
         className="d-flex align-items-center justify-content-center"
       >
         <Spinner variant="info" animation="grow" />

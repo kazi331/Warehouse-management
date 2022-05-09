@@ -2,5 +2,23 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 20px;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+@media (max-width: 576px) {
+  .carousel-inner {
+    border-radius: 10px;
+  }
+  .carousel-indicators {
+    z-index: 0;
+  }
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
 }

@@ -29,9 +29,9 @@ const SingleInventory = ({ item, deleteItem }) => {
       <td>{quantity ? quantity : 10}</td>
       <td>
         <div className="d-flex align-items-center list-action">
-          <button className="badge px-2 py-1 badge-info mr-2 btn">
+          {/* <button className="badge px-2 py-1 badge-info mr-2 btn">
             <i className="ri-eye-line mr-0"></i>
-          </button>
+          </button> */}
           <button
             onClick={() => navigate(`/update/${_id}`)}
             className="badge px-2 py-1  bg-success mr-2 btn"
