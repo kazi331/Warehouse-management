@@ -1,15 +1,24 @@
 import React from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 // import "./login.css";
 import Social from "./Social";
 
 const Register = () => {
+  // redirect user after logging in
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-
+  if (loading) {
+    return <p>Loading......</p>;
+  }
+  if (user) {
+    navigate(from, { replace: true });
+  }
   const register = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -111,10 +120,7 @@ const Register = () => {
                               </div>
                             </div>
                             <div className="col-lg-12">
-                              <div className="custom-control custom-checkbox mb-3">
-                                
-                               
-                              </div>
+                              <div className="custom-control custom-checkbox mb-3"></div>
                             </div>
                             {loading ? <p>Loading......</p> : null}
                           </div>
