@@ -11,6 +11,7 @@ const Inventory = () => {
       .then((res) => res.json())
       .then((data) => setInventory(data));
   }, []);
+
   // spinner
   if (inventory.length === 0) {
     return (
@@ -40,7 +41,7 @@ const Inventory = () => {
   };
 
   return (
-    <div className="container-fluid py-4">
+    <div className="container py-4">
       <Link to="/new" className="btn bg-info text-white my-2 float-right">
         Add New Item
       </Link>

@@ -18,6 +18,9 @@ const Social = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [signInWithGithub, user2, loading2, error2] = useSignInWithGithub(auth);
 
+  if (loading || loading2) {
+    return <p>Loading......</p>;
+  }
   const googleLogin = () => {
     signInWithGoogle();
     if (error || error2) {
@@ -30,9 +33,6 @@ const Social = () => {
     signInWithGithub();
   };
 
-  if (loading || loading2) {
-    return <p>Loading......</p>;
-  }
   if (user || user2) {
     navigate(from, { replace: true });
   }

@@ -28,7 +28,12 @@ const AddNew = () => {
       headers: { "content-type": "application/json" },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data)
+        if(data.acknowledged){
+          e.target.reset()
+        }
+      });
   };
   return (
     <div className="container">
