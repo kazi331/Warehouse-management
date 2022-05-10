@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import {
-  useAuthState,
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
@@ -15,33 +14,26 @@ const Social = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  const [user] = useAuthState(auth);
-  const [signInWithGoogle, loading, error] = useSignInWithGoogle(auth);
-  const [signInWithGithub] = useSignInWithGithub(auth);
+  // const [user] = useAuthState(auth);
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGithub, user2, loading2, error2] = useSignInWithGithub(auth);
 
   const googleLogin = () => {
     signInWithGoogle();
-    if (error) {
+    if (error || error2) {
       toast.error(error.message);
-    }
-  };
-  const fbLogin = () => {
-    if (error) {
-      toast.error(error.message);
-    }
-  };
-  const ghLogin = () => {
-    signInWithGithub();
-    if (error) {
-      toast.error(error.message);
-      return;
     }
   };
 
-  if (loading) {
+  const fbLogin = () => {};
+  const ghLogin = () => {
+    signInWithGithub();
+  };
+
+  if (loading || loading2) {
     return <p>Loading......</p>;
   }
-  if (user) {
+  if (user || user2) {
     navigate(from, { replace: true });
   }
 
@@ -50,11 +42,22 @@ const Social = () => {
       <h3 className="text-dark text-center">Social Login</h3>
       <p className="text-center">Login with social media</p>
       <div className="d-flex gap-2 flex-column py-2 mb-4">
-        <Button className="bg-primary text-white shadow-none" onClick={googleLogin}>Login With Google</Button>
-        <Button className="bg-primary text-white shadow-none" disabled onClick={fbLogin}>
+        <Button
+          className="bg-primary text-white shadow-none"
+          onClick={googleLogin}
+        >
+          Login With Google
+        </Button>
+        <Button
+          className="bg-primary text-white shadow-none"
+          disabled
+          onClick={fbLogin}
+        >
           Login With Facebook
         </Button>
-        <Button className="bg-primary text-white shadow-none" onClick={ghLogin}>Login With Github</Button>
+        <Button className="bg-primary text-white shadow-none" onClick={ghLogin}>
+          Login With Github
+        </Button>
       </div>
     </div>
   );

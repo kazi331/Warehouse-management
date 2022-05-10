@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
 import "./login.css";
-// import "./loginMini.css";
+// import "./register.789a4ed0.css"
 import Social from "./Social";
 
 const Login = () => {
