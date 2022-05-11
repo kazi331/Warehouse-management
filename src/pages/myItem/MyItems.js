@@ -9,7 +9,7 @@ const MyItems = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/my-items?email=${user?.email}`;
+    const url = `https://obscure-fortress-33779.herokuapp.com/my-items?email=${user?.email}`;
     console.log(url);
     fetch(url)
       .then((res) => res.json())
