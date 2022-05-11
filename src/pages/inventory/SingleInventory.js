@@ -14,7 +14,7 @@ const SingleInventory = ({ item, deleteItem }) => {
         <div className="d-flex align-items-center text-left">
           <img src={img} className="img-fluid rounded avatar-50 mr-3" alt="" />
           <div className="product-left">
-            {name}
+            {name.slice(0, 30)}
             <p className="mb-0">
               <small className="d-none d-xl-block">{description.slice(0, 30)}</small>
             </p>

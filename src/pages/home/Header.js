@@ -9,9 +9,9 @@ import auth from "../../firebase.init";
 const Header = () => {
   const [user] = useAuthState(auth);
   return (
-    <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar sticky="top" collapseOnSelect expand="lg" style={{background: '#7e5aff'}} variant="dark">
       <Container>
-        <Navbar.Brand href="/">Home</Navbar.Brand>
+        <Navbar.Brand href="/">Phoenix Management</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -38,14 +38,14 @@ const Header = () => {
                   </span>
                   <Button
                     onClick={() => signOut(auth)}
-                    className="ms-2 bg-danger border-0"
+                    className="ms-2 bg-warning border-0"
                   >
                     LogOut
                   </Button>
                 </div>
               ) : (
                 <Nav.Link
-                  className="btn bg-info text-light px-2"
+                  className="btn border px-2"
                   as={Link}
                   to="/login"
                 >

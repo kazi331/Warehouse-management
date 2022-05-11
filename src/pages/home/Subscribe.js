@@ -3,10 +3,10 @@ import { FormControl } from "react-bootstrap";
 
 const Subscribe = () => {
   return (
-    <div style={{ background: "#f2f4f8" }} className="py-4">
+    <div style={{ background: "#fff" }} className="py-4">
       <div className="row container mx-auto p-4 gap-4 mx-auto">
         <div className="col-lg-6">
-          <h2 className="my-3 text-success">Get the best deals first!</h2>
+          <h2 className="my-3 text-success">Get the best deals first Newsletter!</h2>
           <p className="my-3">
             Sign up for our newsletter and be the first to know about our
             updates. All new subscribers get some tips and tips for good

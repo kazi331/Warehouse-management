@@ -1,11 +1,17 @@
 import React from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import "./addnew.css";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from "../../firebase.init";
+import { toast } from "react-toastify";
+
 
 const AddNew = () => {
+  const [user, loading] = useAuthState(auth);
   const addProduct = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
+    const sEmail = e.target.sEmail.value;
     const supplier = e.target.supplier.value;
     const category = e.target.category.value;
     const price = e.target.price.value;
@@ -14,6 +20,7 @@ const AddNew = () => {
     const description = e.target.description.value;
     const newProduct = {
       name,
+      sEmail,
       category,
       price,
       quantity,
@@ -21,7 +28,7 @@ const AddNew = () => {
       description,
       supplier,
     };
-    console.log(newProduct);
+    // console.log(newProduct);
     fetch("https://obscure-fortress-33779.herokuapp.com/newproduct", {
       method: "POST",
       body: JSON.stringify(newProduct),
@@ -29,8 +36,9 @@ const AddNew = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        // console.log(data)
         if(data.acknowledged){
+          toast.info(`${name} is added to your vendor!`)
           e.target.reset()
         }
       });
@@ -41,6 +49,7 @@ const AddNew = () => {
         <div className="col-12 col-lg-8 mx-auto">
           <h2 className="text-center mb-4 text-dark">Add new product </h2>
           <Form onSubmit={addProduct}>
+            <input type="hidden" name="sEmail" value={user?.email} />
             <Form.Group as={Row} className="mb-3">
               <Form.Label column sm="2">
                 Name

@@ -3,8 +3,12 @@ import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./inventory-mini.css";
 import SingleInventory from "./SingleInventory";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from "../../firebase.init";
+
 
 const Inventory = () => {
+  const [user] = useAuthState(auth);
   const [inventory, setInventory] = useState([]);
   useEffect(() => {
     fetch("https://obscure-fortress-33779.herokuapp.com/get-product")
@@ -27,6 +31,7 @@ const Inventory = () => {
   const deleteItem = (id) => {
     const proceed = window.confirm("are you sure?");
     if (proceed) {
+
       const url = `https://obscure-fortress-33779.herokuapp.com/delete/${id}`;
       fetch(url, { method: "delete" })
         .then((res) => res.json())
@@ -39,9 +44,9 @@ const Inventory = () => {
         });
     }
   };
-
+ console.log('user email: ', user?.email, 'supplier email: ');
   return (
-    <div className="container py-4">
+    <div className="container-lg py-4">
       <Link to="/new" className="btn bg-info text-white my-2 float-right">
         Add New Item
       </Link>
@@ -53,13 +58,7 @@ const Inventory = () => {
       >
         <thead className="bg-white text-uppercase">
           <tr className="ligth ligth-data" role="row">
-            {/* <th
-              className="sorting_asc"
-              rowSpan="1"
-              colSpan="1"
-              aria-sort="ascending"
-              style={{ width: "16.2812px" }}
-            ></th> */}
+            
             <th
               className="sorting text-left"
               rowSpan="1"
@@ -124,7 +123,10 @@ const Inventory = () => {
             <SingleInventory
               item={single}
               key={single._id}
-              deleteItem={() => deleteItem(single._id)}
+              deleteItem={() => {
+                deleteItem(single._id);
+                console.log(single?.sEmail);
+              }}
             />
           ))}
         </tbody>

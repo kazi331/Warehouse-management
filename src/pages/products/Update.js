@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import auth from "../../firebase.init";
 
 const Update = () => {
+  const [user] = useAuthState(auth);
+  console.log(user);
   const { pid } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
@@ -9,8 +13,8 @@ const Update = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
-  }, []);
-  const { name, category, description, img, price, quantity, supplier } =
+  }, [pid]);
+  const { name, category, description, img, price, quantity, supplier , sEmail } =
     product;
   const sold = 0;
   return (
@@ -28,7 +32,7 @@ const Update = () => {
             <div className="col-lg-6 col-12 product-items-details mb-1">
               <h5>{name}</h5>
               <p>{description}</p>
-              <small>Supplier: {supplier}</small>
+              <small>Supplier: {supplier} - {sEmail}  </small>
               <br />
               <small>Category: {category}</small>
               <br />

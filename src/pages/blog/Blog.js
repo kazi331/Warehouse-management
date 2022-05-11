@@ -39,13 +39,13 @@ const Blog = () => {
       <Alert variant="success">
         Differences between sql and nosql databases.
       </Alert>
-      <p className="p-3">
+      <div className="p-3">
         <big>Ans: </big> <strong>SQL</strong> database is primarily called as
         Relational Database(RDBMS). <strong>NoSQL</strong> database are
         primarily called as non-relational database or also called as{" "}
         <em>Distributed Database</em> . <br />
         <b>Key difference between SQL & NoSQL</b>
-        <hr />
+       
         <ul>
           <li>
             <b>SQL</b> is a relation database system whereas, <b>NoSQL</b> is a
@@ -62,9 +62,9 @@ const Blog = () => {
             storage.
           </li>
         </ul>
-      </p>
+      </div>
       <Alert variant="primary">
-        What is the purpose of jwt and how does it work
+        What is the purpose of jwt and how does it work?
       </Alert>
       <p className="p-3">
         <big>Ans: </big> <strong>JWT</strong> stands for json web token. JWT is

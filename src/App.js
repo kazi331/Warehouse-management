@@ -55,8 +55,15 @@ function App() {
         />
         <Route path="/blog" element={<Blog />} />
         <Route path="/featured" element={<Featured />} />
-        <Route path="/my-items" element={<MyItems />} />
-        
+        <Route
+          path="/my-items"
+          element={
+            <Protected>
+              <MyItems />
+            </Protected>
+          }
+        />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer />
