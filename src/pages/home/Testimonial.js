@@ -4,7 +4,8 @@ import "./testimonial.css";
 const Testimonial = () => {
   return (
     <div className="testimonial-container">
-      <div className="container">
+      <h3 className="text-center py-3">Top 3 reviews</h3>
+      <div className="container pb-4 mb-3">
         <div className="row">
           <div className="col-lg-4">
             <div className="card-testimonial">

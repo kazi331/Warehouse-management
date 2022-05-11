@@ -5,7 +5,7 @@ import SingleInventory from "../inventory/SingleInventory";
 
 const MyItems = () => {
   const [user, loading, error] = useAuthState(auth);
-  console.log(user?.email);
+  // console.log(user?.email);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const MyItems = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setProducts(data);
       });
   }, [user?.email]);
@@ -34,7 +34,7 @@ const MyItems = () => {
         });
     }
   };
-  console.log(products);
+  // console.log(products);
   return (
     <div className="container mx-auto">
       <h2 className="text-center p-4 m-4">My Items</h2>
@@ -106,7 +106,13 @@ const MyItems = () => {
           </tr>
         </thead>
         {products.length === 0 ? (
-          <p style={{borderTop : '0', margin: '5px auto', textAlign: 'center'}}>No products found !! </p>
+          <tbody
+            style={{ borderTop: "0", margin: "5px auto", textAlign: "center" }}
+          >
+            <tr>
+              <td>No products found !!</td>
+            </tr>
+          </tbody>
         ) : (
           <tbody className="ligth-body">
             {products.map((single) => (

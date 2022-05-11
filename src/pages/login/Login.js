@@ -4,13 +4,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../../firebase.init";
 import "./login.css";
-
 import Social from "./Social";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-      // redirect user after logging in
+  // redirect user after logging in
   const navigate = useNavigate();
   const location = useLocation();
   if (loading) {
@@ -25,8 +24,6 @@ const Login = () => {
   if (error) {
     toast.error(error.message);
   }
-
-
   const from = location.state?.from?.pathname || "/";
 
   if (user) {

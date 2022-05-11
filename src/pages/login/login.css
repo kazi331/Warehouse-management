@@ -1842,3 +1842,7 @@ i {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
+
+.floating-input:not(:placeholder-shown) ~ label {
+  line-height: 0;
+}

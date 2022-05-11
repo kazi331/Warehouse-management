@@ -1,9 +1,11 @@
 import React from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
-// import "./login.css";
 import Social from "./Social";
 
 const Register = () => {
@@ -13,11 +15,17 @@ const Register = () => {
   const from = location.state?.from?.pathname || "/";
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [sendEmailVerification, sending, error2] =
+    useSendEmailVerification(auth);
   if (loading) {
     return <p>Loading......</p>;
   }
   if (user) {
     navigate(from, { replace: true });
+  }
+  if (error || error2) {
+    toast.error(error.message);
+
   }
   const register = (e) => {
     e.preventDefault();
@@ -26,13 +34,11 @@ const Register = () => {
     const pass2 = e.target.confirmPass.value;
     if (pass !== pass2) {
       toast.warn("Password doesn't match.");
-      return;
+
     }
     createUserWithEmailAndPassword(email, pass);
-    if (error) {
-      toast.error(error.message);
-      return;
-    }
+    sendEmailVerification();
+
     e.target.email.value = "";
     e.target.name.value = "";
     e.target.password.value = "";
