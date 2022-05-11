@@ -38,7 +38,9 @@ const Products = () => {
         </div>
       </section>
       <div className="text-center">
-        <Link to="/inventory" className="btn btn-primary">Manage Inventories</Link>
+        <Link to="/inventory" className="btn btn-primary">
+          Manage Inventories
+        </Link>
       </div>
     </div>
   );

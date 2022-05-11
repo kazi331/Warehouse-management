@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import auth from "../../firebase.init";
 
 const Update = () => {
-  const [user] = useAuthState(auth);
-  console.log(user);
   const { pid } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
@@ -14,15 +11,55 @@ const Update = () => {
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [pid]);
-  const { name, category, description, img, price, quantity, supplier , sEmail } =
-    product;
-  const sold = 0;
+  const {
+    name,
+    category,
+    description,
+    img,
+    price,
+    quantity,
+    supplier,
+    sEmail,
+  } = product;
+  const updateProduct = (e) => {
+    e.preventDefault();
+    const number = parseInt(e.target.quantity.value);
+    const newQuantity = parseInt(quantity) + number;
+    const newData = { quantity: newQuantity };
+    console.log(newQuantity, number);
+    fetch(`https://obscure-fortress-33779.herokuapp.com/update/${pid}`, {
+      method: "PUT",
+      body: JSON.stringify(newData),
+      headers: { "content-type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        window.location.reload();
+      });
+  };
+  const deliver = (e) => {
+    e.preventDefault();
+    const newQuantity = quantity - 1;
+    const newData = { quantity: newQuantity };
+    console.log(newData);
+    fetch(`https://obscure-fortress-33779.herokuapp.com/update/${pid}`, {
+      method: "PUT",
+      body: JSON.stringify(newData),
+      headers: { "content-type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        window.location.reload();
+      });
+  };
+
   return (
     <div className="container mx-auto">
-      <h4 className="text-center py-4  ">
-        {" "}
-        <small>Your Are Editing - </small> {name}
-      </h4>
+      <div className="text-center py-4">
+        <small>Your Are Editing </small> <h6> {name} </h6>
+      </div>
       <div className="col-12 col-sm-8 col-lg-8 mx-auto">
         <div className="products-items update">
           <div className="row">
@@ -30,16 +67,39 @@ const Update = () => {
               <img className="product-image" src={img} alt="" />
             </div>
             <div className="col-lg-6 col-12 product-items-details mb-1">
-              <h5>{name}</h5>
-              <p>{description}</p>
-              <small>Supplier: {supplier} - {sEmail}  </small>
+              <h6>{name}</h6>
+              <small>{description}</small>
+              <small>
+                Supplier: {supplier} - {sEmail}{" "}
+              </small>
               <br />
               <small>Category: {category}</small>
               <br />
-              <small>Available: {quantity}</small> <br />
-              <small>Sold: {sold}</small>
+              <small>Available: {quantity}</small>
+
               <p className="text-success mb-0 pb-0">${price}</p>
             </div>
+          </div>
+        </div>
+        <div className="row py-4 mb-4">
+          <div className="col-12 col-lg-6 my-2">
+            <Button onClick={deliver}>Deliver One</Button>
+          </div>
+          <div className="col-12 col-lg-6 my-2">
+            <form onSubmit={updateProduct} className="row">
+              <input
+                className="form-control col"
+                type="number"
+                name="quantity"
+                placeholder="Update Stock"
+                required
+              />
+              <input
+                className="btn btn-primary ms-4 col"
+                type="submit"
+                value="Update"
+              />
+            </form>
           </div>
         </div>
       </div>

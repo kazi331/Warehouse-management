@@ -20,7 +20,7 @@ const Protected = ({ children }) => {
     if (error) toast.error(error.message);
   };
   const location = useLocation();
-  console.log(user);
+  // console.log(user);
 
   if (loading) {
     return <p className="text-center p-4 m-4 ">Loading...... </p>;
