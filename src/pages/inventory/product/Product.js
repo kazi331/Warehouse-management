@@ -18,10 +18,10 @@ const Product = ({ product, deleteItem }) => {
         </div>
         <div className="product-items-details mb-1">
           <h5>
-            <a href="/">{name}</a>
+            <a href="#!">{name.slice(0, 60)}</a>
           </h5>
-          <p>
-            <small>{description}</small> <br />
+          <p className="mb-4">
+            <small>{description.slice(0, 138)}</small> <br />
           </p>
           <small>Supplier: {supplier}</small>
           <br />

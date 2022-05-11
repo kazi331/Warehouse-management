@@ -58,7 +58,7 @@ const Update = () => {
   return (
     <div className="container mx-auto">
       <div className="text-center py-4">
-        <small>Your Are Editing </small> <h6> {name} </h6>
+        <small>Your Are Editing </small> <h6> {name?.slice(0,40)} </h6>
       </div>
       <div className="col-12 col-sm-8 col-lg-8 mx-auto">
         <div className="products-items update">
@@ -68,9 +68,9 @@ const Update = () => {
             </div>
             <div className="col-lg-6 col-12 product-items-details mb-1">
               <h6>{name}</h6>
-              <small>{description}</small>
+              <p><small>{description}</small> </p>
               <small>
-                Supplier: {supplier} - {sEmail}{" "}
+                Supplier: {supplier}
               </small>
               <br />
               <small>Category: {category}</small>
